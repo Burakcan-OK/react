@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "title":"Gum",
+        "price":0.5,
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPQPXhMjGkqqWOvoonD6gIdfQkenKxaG667g&usqp=CAU"
+    },
+    {
+        "id":2,
+        "title":"Coke",
+        "price":6,
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSptkZITcv4HEep_RSZkAi8Pp_LNz8cvEnIlQ&usqp=CAU"
+    },
+    {
+        "id":3,
+        "title":"Shoes",
+        "price":200,
+        "image":"https://hips.hearstapps.com/hmg-prod/images/hoka-zinal-13085-1643565794.jpg"
+    },
+    {
+        "id":4,
+        "title":"Car",
+        "price":50000,
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVsGjGwEJ_pFQzi3x58-IIpBUJUu0eG24uuQ&usqp=CAU"
+    }
+]
