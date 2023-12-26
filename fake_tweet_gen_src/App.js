@@ -53,6 +53,25 @@ const formatNumber = (number) => {
     number[0] + (number[1] > 100 ? ',' + number[1].slice(0, 1) + 'B' : ' B')
   );
 };
+const formatDate=(time) =>{
+  time=String(time).split("-")
+  let m =time[1]
+  let month=''
+  if(m==1){month= 'JAN'}
+  else if(m==2){month= 'FEB'}
+  else if(m==3){month= 'MAR'}
+  else if(m==4){month= 'APR'}
+  else if(m==5){month= 'MAY'}
+  else if(m==6){month= 'JUN'}
+  else if(m==7){month= 'JUL'}
+  else if(m==8){month= 'AUG'}
+  else if(m==9){month= 'SEP'}
+  else if(m=10){month= 'OCT'}
+  else if(m==11){month= 'NOV'}
+  else if(m==12){month= 'DEC'}
+  console.log(month)
+  return `${month} ${time[2]}, ${time[0]}`
+}
 
 function App() {
   const tweetRef = createRef(null);
@@ -62,18 +81,19 @@ function App() {
   const [isVerified, setIsVerified] = useState(0);
   const [tweet, setTweet] = useState();
   const [avatar, setAvatar] = useState();
-  const [retweets, setRetweets] = useState(1478);
+  const [retweets, setRetweets] = useState(0);
   const [quoteTweets, setQuoteTweets] = useState(0);
   const [likes, setLikes] = useState(0);
-  const [shares, setShares] = useState(0);
-  const [bookmark, setBookmark] = useState(0);
+  const [views, setViews] = useState(1422);
+  const [time, setTime] = useState('');
+  const [date, setDate] = useState();
   const [image, takeScreenshot] = useScreenshot();
   const getImage = () => {
     takeScreenshot(tweetRef.current);
   };
   const ımageConverter = () => {
     convertImgToBase64(
-      'https://pbs.twimg.com/profile_images/1333840878788628481/TrCW6pSN_400x400.jpg',
+      "https://pbs.twimg.com/profile_images/1506317244510478349/-475uWql_400x400.jpg",
       function (base64Image) {
         setAvatar(base64Image);
       }
@@ -192,21 +212,30 @@ function App() {
             </select>
           </option>
           <li>
-            <label>Book Marks</label>
+            <label>Time</label>
             <input
               className="input"
-              type="number"
-              value={bookmark}
-              onChange={(e) => setBookmark(e.target.value)}
+              type="time"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
             />
           </li>
           <li>
-            <label>Shares</label>
+            <label>Date and Time</label>
+            <input
+              className="input"
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+          </li>
+          <li>
+            <label>Views</label>
             <input
               className="input"
               type="number"
-              value={shares}
-              onChange={(e) => setShares(e.target.value)}
+              value={views}
+              onChange={(e) => setLikes(e.target.value)}
             />
           </li>
           <button onClick={getImage}>Generate</button>
@@ -247,17 +276,18 @@ function App() {
               }}
             ></p>
           </div>
-          {/* <div className="tweet-stats">
+          <div className="tweet-stats">
+            <time>
+              {time} AM
+            </time>
+            <span >·</span>
+            <time>
+              {formatDate(date)}
+            </time>
             <span>
-              <b>{retweets}</b> Retweet
+              <b className="view-num"><span >·</span>{views > 0 ?formatNumber(views):null}</b> Views
             </span>
-            <span>
-              <b>{quoteTweets}</b> Alıntı Tweetler
-            </span>
-            <span>
-              <b>{likes}</b> Beğeni
-            </span>
-          </div> */}
+          </div>
           <div className="tweet-actions">
             <span className="tweet-act-count">
               <ReplyIcon />
@@ -273,11 +303,11 @@ function App() {
             </span>
             <span className="tweet-act-count">
               <BookmarkIcon />
-              <span>{bookmark > 0 ? formatNumber(bookmark) : null}</span>
+              
             </span>
             <span className="tweet-act-count">
               <ShareIcon />
-              <span>{shares > 0 ? formatNumber(shares) : null}</span>
+              
             </span>
           </div>
         </div>
