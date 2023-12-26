@@ -55,21 +55,20 @@ const formatNumber = (number) => {
 };
 const formatDate=(time) =>{
   time=String(time).split("-")
-  let m =time[1]
+  var m =time[1]
   let month=''
-  if(m==1){month= 'JAN'}
-  else if(m==2){month= 'FEB'}
-  else if(m==3){month= 'MAR'}
-  else if(m==4){month= 'APR'}
-  else if(m==5){month= 'MAY'}
-  else if(m==6){month= 'JUN'}
-  else if(m==7){month= 'JUL'}
-  else if(m==8){month= 'AUG'}
-  else if(m==9){month= 'SEP'}
-  else if(m=10){month= 'OCT'}
-  else if(m==11){month= 'NOV'}
-  else if(m==12){month= 'DEC'}
-  console.log(month)
+  if(m=="01"){month= 'JAN'}
+  else if(m=="02"){month= 'FEB'}
+  else if(m=="03"){month= 'MAR'}
+  else if(m=="04"){month= 'APR'}
+  else if(m=="05"){month= 'MAY'}
+  else if(m=="06"){month= 'JUN'}
+  else if(m=="07"){month= 'JUL'}
+  else if(m=="08"){month= 'AUG'}
+  else if(m=="09"){month= 'SEP'}
+  else if(m="10"){month= 'OCT'}
+  else if(m=="11"){month= 'NOV'}
+  else if(m=="12"){month= 'DEC'}
   return `${month} ${time[2]}, ${time[0]}`
 }
 
