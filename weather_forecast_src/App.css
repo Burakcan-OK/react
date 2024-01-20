@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+}
+.data{
+  background-image: url('landscape.jpg');
+  background-size: cover;
+  width: 110vh;
+  height: 80vh;
+  margin: auto;
+  border-radius: 1%;
+  padding-top: 2%;
+  font-weight: 900;
+}
+.btn{
+  background-color: #61dafb;
+  border-radius: 10px solid black;
+  height: 60px;
+  border-radius: 5px;
+  margin: 10px 0 10px;
+  margin: auto;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
